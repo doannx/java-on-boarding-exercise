@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- TODO: Convert all XHTML1 code syntax of codebase into HTML5 code as much as possible -->
+<!-- TODO: Add mobile viewport, browser config, cross domain, icons, robots, reset CSS... as declared in HTML5 boilerplate template -->
+  <meta charset="utf-8">
+  <title>HTML5 Self-training Roadmap: Case Study</title>
+
+  <!-- 
+  Following URLs use CDNs that requires Internet connection. 
+  If you have troubles with the connection, you are free to download the files and replace code with coresponding local URLs 
+  -->
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/plug-ins/1.10.10/api/fnReloadAjax.js"></script>
+  
+  <style>
+  <!-- TODO: Move following inline styles into CSS file -->
+
+* {margin: 0; padding: 0;}
+
+body {
+	font-family: 'Lucida Grande', helvetica, arial, sans-serif;
+	font-size: 12px;
+	background: #eff;
+	margin: 20px;
+}
+
+.navigation {
+	margin: 20px 0;
+	background: #fff;
+	overflow: hidden;
+	width: 880px;
+	box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+.navigation li {
+	width: 150px; 
+	border-left: 5px solid #666;
+	float: left;
+	cursor: pointer;
+	list-style-type: none;
+	
+	padding: 10px 50px 10px 15px;
+	
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+}
+
+.navigation li h2 {
+	font-family: georgia;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 14px;
+	margin-bottom: 5px;
+	line-height: 16px;
+	text-transform: uppercase;
+}
+
+.navigation li p{
+	font-size: 11px;
+	color: #999;
+	
+	-webkit-transition: all 0.1s ease-in;
+	-moz-transition: all 0.1s ease-in;
+	-o-transition: all 0.1s ease-in;
+}
+
+.navigation li:hover {
+	background: #333;
+	border-left: 5px solid #000;
+}
+
+.navigation li:hover h2 {
+	font-weight: bold;
+	color: #fff;
+}
+
+.navigation li:hover p {
+	color: #ccc;
+	padding-left: 5px;
+}
+
+#logo {
+	float: left;
+	margin-right: 20px;
+}
+
+#main h2 {
+	margin-bottom: 20px;
+}
+
+  </style>
+</head>
+<body>
+
+<div>
+<img id="logo" src="data:image/png;base64,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" alt="HTML5" title="HTML5">
+<h1>
+Project Information Management
+</h1>
+</div>
+
+<ul class="navigation">
+	<li onclick="$('#introduction').show().siblings().hide();">
+		<h2>Introduction</h2>
+		<p>Welcome to the app</p>
+	</li>
+	<li onclick="$('#searchProject').show().siblings().hide(); loadProjectsList();">
+		<h2>Search project</h2>
+		<p>Search, edit, delete project</p>
+	</li>
+	<li onclick="$('#project').show().siblings().hide();">
+		<h2>Project</h2>
+		<p>Create a project</p>
+	</li>
+	<li onclick="$('#statistic').show().siblings().hide(); loadStatistic();">
+		<h2>Statistic</h2>
+		<p>Pie chart by project status</p>
+	</li>
+</ul>
+
+<div id="main">
+
+<div id="introduction">
+	<!-- TODO: Develop introduction page (as the requirement of roadmap) -->
+	<h2>Introduction</h2>
+	Bla bla bla
+</div>
+
+<div id="searchProject" style="display:none">
+	<h2>Search project</h2>
+	<!-- TODO: Develop search page with criteria pane and drag-drop ability (as the requirement of roadmap) -->
+	Bla bla bla
+	<input type="button" value="Search" onclick="searchProjects()">
+	<table id="projectsList" class="display" width="100%"></table>
+</div>
+
+<div id="project" style="display:none">
+	<!-- 
+	TODO: Develop project creation page (as the requirement of roadmap).
+	You are not required to post back the data to server (focus on HTML only). 
+	Instead, you are required to display a message dialog and return to the search screen.
+	-->
+	<h2>Project</h2>
+	Bla bla bla
+	<input type="button" value="Save">
+</div>
+
+<div id="statistic" style="display:none">
+	<h2>Statistic</h2>
+	<!-- TODO: Develop statistic page with chart drawed using Canvas (as the requirement of roadmap) -->
+	Bla bla bla
+</div>
+
+</div>
+
+<script>
+// TODO: Move following inline scripts into JS file (and optionally, add above event handlers in the JS files using DOM selectors to have unobtrusiveness)
+
+function loadProjectsList() {
+	if (typeof(loadProjectsList.isLoaded) == 'undefined') {
+		loadProjectsList.isLoaded = true;
+		$('#projectsList').DataTable( {
+			ajax: './dummy_services/searchProjects.json?search_criteria=ALL',
+			columns: [
+				{ title: "A" },
+				{ title: "B" },
+				{ title: "C" },
+				{ title: "D" },
+				{ title: "E" }
+			],
+			searching: false
+		} );
+		return;
+	}
+
+	$('#projectsList').dataTable().fnReloadAjax('./dummy_services/searchProjects.json?search_criteria=ALL');
+}
+
+function searchProjects() {
+	$('#projectsList').dataTable().fnReloadAjax('./dummy_services/searchProjects.json?search_criteria=TODO');
+}
+
+function loadProjectDetails() {
+	$.ajax({
+		url: './dummy_services/getProject.json'
+	});
+}
+
+function loadStatistic() {
+	$.ajax({
+		url: './dummy_services/getStatistic.json'
+	});
+}
+
+</script>
+
+</body>
+</html>

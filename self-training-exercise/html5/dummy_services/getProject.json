@@ -1,0 +1,10 @@
+{
+  "prjNo" : "1",
+  "prjName" : "Project I",
+  "prjStatus" : "To validate",
+  "prjCustomer" : "Customer I",
+  "prjStartDate" : "01.12.2020",
+  "prjEndDate" : "01.12.2020",
+  "prjLeader" : "VISA",
+  "prjWorkload" : "3600h"
+}

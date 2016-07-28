@@ -1,0 +1,16 @@
+{
+  "summaryData": [
+    {
+      "status": "To validate",
+      "percentage": 0.20
+    },
+    {
+      "status": "Validated",
+      "percentage": 0.35
+    },
+    {
+      "status": "Finished",
+      "percentage": 0.45
+    }
+ ]
+}
